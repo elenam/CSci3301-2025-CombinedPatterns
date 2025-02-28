@@ -1,9 +1,9 @@
 
 public class DecoyDuck implements Quackable {
-	Observable observable;
+	ObservingQuacks observable;
 
 	public DecoyDuck() {
-		observable = new Observable(this);
+		observable = new ObservingQuacks(this);
 	}
  
 	public void quack() {
@@ -11,7 +11,7 @@ public class DecoyDuck implements Quackable {
 		notifyObservers();
 	}
  
-	public void registerObserver(Observer observer) {
+	public void registerObserver(QuackObserver observer) {
 		observable.registerObserver(observer);
 	}
 

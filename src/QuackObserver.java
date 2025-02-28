@@ -1,3 +1,3 @@
-public interface Observer {
+public interface QuackObserver {
 	public void update(QuackObservable duck);
 }

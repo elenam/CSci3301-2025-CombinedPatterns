@@ -2,11 +2,6 @@ public class DuckSimulator {
 	public static void main(String[] args) {
 		DuckSimulator simulator = new DuckSimulator();
 		AbstractDuckFactory duckFactory = new CountingDuckFactory();
- 
-		simulator.simulate(duckFactory);
-	}
-  
-	void simulate(AbstractDuckFactory duckFactory) {
   
 		Quackable redheadDuck = duckFactory.createRedheadDuck();
 		Quackable duckCall = duckFactory.createDuckCall();
@@ -46,7 +41,7 @@ public class DuckSimulator {
 		                   " times");
 	}
  
-	void simulate(Quackable duck) {
+	static void simulate(Quackable duck) {
 		duck.quack();
 	}
 }

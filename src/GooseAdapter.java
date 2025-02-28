@@ -1,10 +1,14 @@
+/*
+ * Using adapter pattern to make a goose quackable without
+ * changing the Goose class
+ */
 public class GooseAdapter implements Quackable {
 	Goose goose;
-	Observable observable;
+	ObservingQuacks observable;
 
 	public GooseAdapter(Goose goose) {
 		this.goose = goose;
-		observable = new Observable(this);
+		observable = new ObservingQuacks(this);
 	}
  
 	public void quack() {
@@ -12,7 +16,7 @@ public class GooseAdapter implements Quackable {
 		notifyObservers();
 	}
 
-	public void registerObserver(Observer observer) {
+	public void registerObserver(QuackObserver observer) {
 		observable.registerObserver(observer);
 	}
 

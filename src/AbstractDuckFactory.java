@@ -1,3 +1,7 @@
+/*
+ * We can create regular ducks or decorated ducks - 
+ * ducks for which we count quacks
+ */
 
 public abstract class AbstractDuckFactory {
  

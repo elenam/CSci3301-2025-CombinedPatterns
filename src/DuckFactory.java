@@ -1,4 +1,6 @@
-
+/*
+ * Creating real ducks, without a decorator
+ */
 public class DuckFactory extends AbstractDuckFactory {
   
 	public Quackable createMallardDuck() {

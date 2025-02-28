@@ -1,8 +1,8 @@
 public class MallardDuck implements Quackable {
-	Observable observable;
+	ObservingQuacks myObservers;
  
 	public MallardDuck() {
-		observable = new Observable(this);
+		myObservers = new ObservingQuacks(this);
 	}
  
 	public void quack() {
@@ -10,12 +10,12 @@ public class MallardDuck implements Quackable {
 		notifyObservers();
 	}
  
-	public void registerObserver(Observer observer) {
-		observable.registerObserver(observer);
+	public void registerObserver(QuackObserver observer) {
+		myObservers.registerObserver(observer);
 	}
  
 	public void notifyObservers() {
-		observable.notifyObservers();
+		myObservers.notifyObservers();
 	}
  
 	public String toString() {

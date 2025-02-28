@@ -1,4 +1,7 @@
-
+/*
+ * Creating ducks for which we keep track of quacks (counting 
+ * was added via Decorator pattern, see QuackCounter. 
+ */
 public class CountingDuckFactory extends AbstractDuckFactory {
   
 	public Quackable createMallardDuck() {

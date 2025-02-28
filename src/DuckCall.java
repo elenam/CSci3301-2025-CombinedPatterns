@@ -1,22 +1,25 @@
 
 public class DuckCall implements Quackable {
-	Observable observable;
+	ObservingQuacks myObservers;
 
 	public DuckCall() {
-		observable = new Observable(this);
+		myObservers = new ObservingQuacks(this);
 	}
  
+	/*
+	 * Calls used by hunters
+	 */
 	public void quack() {
 		System.out.println("Kwak");
 		notifyObservers();
 	}
  
-	public void registerObserver(Observer observer) {
-		observable.registerObserver(observer);
+	public void registerObserver(QuackObserver observer) {
+		myObservers.registerObserver(observer);
 	}
 
 	public void notifyObservers() {
-		observable.notifyObservers();
+		myObservers.notifyObservers();
 	}
  
 	public String toString() {

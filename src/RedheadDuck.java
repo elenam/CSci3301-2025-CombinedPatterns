@@ -1,8 +1,11 @@
 public class RedheadDuck implements Quackable {
-	Observable observable;
+	// after adding the observer pattern each duck is observable,
+	// keeping the list of its observers in its instance of
+	// ObservingQuacks
+	ObservingQuacks myObservers;
 
 	public RedheadDuck() {
-		observable = new Observable(this);
+		myObservers = new ObservingQuacks(this);
 	}
 
 	public void quack() {
@@ -10,12 +13,12 @@ public class RedheadDuck implements Quackable {
 		notifyObservers();
 	}
 
-	public void registerObserver(Observer observer) {
-		observable.registerObserver(observer);
+	public void registerObserver(QuackObserver observer) {
+		myObservers.registerObserver(observer);
 	}
 
 	public void notifyObservers() {
-		observable.notifyObservers();
+		myObservers.notifyObservers();
 	}
 
 	public String toString() {
